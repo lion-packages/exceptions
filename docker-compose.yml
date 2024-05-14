@@ -1,0 +1,13 @@
+services:
+  app:
+    container_name: php-package-template-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./:/var/www/html
+networks:
+  lion:
+    driver: bridge
