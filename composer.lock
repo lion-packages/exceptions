@@ -4,28 +4,29 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6ca3b5b6f5ad3829a2d113299e705980",
+    "content-hash": "6575320131bd8b22d4ba330bb9080c77",
     "packages": [],
     "packages-dev": [
         {
             "name": "lion/test",
-            "version": "v1.6.0",
+            "version": "v2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/lion-packages/test.git",
-                "reference": "62fb7e5e7383a9ad8bddc81957dc94f7b3b0f33b"
+                "reference": "73c46aece1e6f6b8f954e0c96d82e37834bb490d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lion-packages/test/zipball/62fb7e5e7383a9ad8bddc81957dc94f7b3b0f33b",
-                "reference": "62fb7e5e7383a9ad8bddc81957dc94f7b3b0f33b",
+                "url": "https://api.github.com/repos/lion-packages/test/zipball/73c46aece1e6f6b8f954e0c96d82e37834bb490d",
+                "reference": "73c46aece1e6f6b8f954e0c96d82e37834bb490d",
                 "shasum": ""
             },
             "require": {
-                "php": ">=8.2"
+                "php": ">=8.3"
             },
             "require-dev": {
-                "phpunit/phpunit": "^10.4"
+                "lion/exceptions": "^1.0",
+                "phpunit/phpunit": "^11.1"
             },
             "type": "library",
             "autoload": {
@@ -40,9 +41,9 @@
             "description": "library to implement testing with helpers that allow easy testing with PHPUnit",
             "support": {
                 "issues": "https://github.com/lion-packages/test/issues",
-                "source": "https://github.com/lion-packages/test/tree/v1.6.0"
+                "source": "https://github.com/lion-packages/test/tree/v2.0.0"
             },
-            "time": "2024-03-18T23:05:10+00:00"
+            "time": "2024-05-14T21:31:25+00:00"
         },
         {
             "name": "myclabs/deep-copy",
