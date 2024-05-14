@@ -1,6 +1,6 @@
 services:
   app:
-    container_name: php-package-template-app
+    container_name: exceptions-app
     build:
       context: .
       dockerfile: Dockerfile

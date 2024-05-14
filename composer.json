@@ -1,11 +1,11 @@
 {
-    "name": "lion/package-template",
-    "description": "",
+    "name": "lion/exceptions",
+    "description": "Handling exceptions and serializations",
     "type": "library",
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Lion\\PackageTemplate\\": "src/"
+            "Lion\\Exceptions\\": "src/LionExceptions/"
         }
     },
     "autoload-dev": {
