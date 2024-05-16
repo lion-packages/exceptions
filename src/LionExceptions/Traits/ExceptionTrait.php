@@ -42,6 +42,18 @@ trait ExceptionTrait
      */
     public function jsonSerialize(): mixed
     {
+        if ($this->getCode() != 0) {
+            http_response_code($this->getCode());
+        }
+
+        if (null === $this->getData()) {
+            return (object) [
+                'code' => $this->getCode(),
+                'status' => $this->getStatus(),
+                'message' => $this->getMessage(),
+            ];
+        }
+
         return (object) [
             'code' => $this->getCode(),
             'status' => $this->getStatus(),

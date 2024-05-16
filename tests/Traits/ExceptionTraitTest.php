@@ -11,13 +11,17 @@ class ExceptionTraitTest extends Test
 {
     const STATUS = 'error';
     const MESSAGE = 'ERR';
+    const CODE = 500;
 
     public function testConstruct(): void
     {
-        $this->expectException(ExceptionProvider::class);
-        $this->expectExceptionMessage(self::MESSAGE);
-        $this->expectExceptionCode(500);
-
-        throw new ExceptionProvider(self::MESSAGE, self::STATUS, 500);
+        $this
+            ->exception(ExceptionProvider::class)
+            ->exceptionMessage(self::MESSAGE)
+            ->exceptionStatus(self::STATUS)
+            ->exceptionCode(self::CODE)
+            ->expectLionException(function (): void {
+                throw new ExceptionProvider(self::MESSAGE, self::STATUS, self::CODE);
+            });
     }
 }
