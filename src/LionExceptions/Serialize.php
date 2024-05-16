@@ -22,8 +22,12 @@ final class Serialize
     final public function exceptionHandler(): void
     {
         set_exception_handler(function (Throwable $exception): void {
+            if ($exception->getCode() != 0) {
+                http_response_code($exception->getCode());
+            }
+
             if ($exception instanceof JsonSerializable) {
-                die(json_encode($exception, JSON_PRETTY_PRINT));
+                die(json_encode($exception));
             }
 
             die(json_encode([
@@ -34,7 +38,7 @@ final class Serialize
                     'file' => $exception->getFile(),
                     'line' => $exception->getLine()
                 ]
-            ], JSON_PRETTY_PRINT));
+            ]));
         });
     }
 }
