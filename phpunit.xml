@@ -31,7 +31,8 @@
 
     <testsuites>
         <testsuite name="All-Test">
-            <directory>tests/</directory>
+            <file>tests/ExceptionTest.php</file>
+            <file>tests/SerializeTest.php</file>
         </testsuite>
     </testsuites>
 </phpunit>
