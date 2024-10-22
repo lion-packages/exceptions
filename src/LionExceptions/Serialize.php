@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Lion\Exceptions;
 
+use Closure;
 use JsonSerializable;
 use Throwable;
 
@@ -33,29 +34,43 @@ final class Serialize
     /**
      * Manages exceptions and serializes them to JSON format
      *
+     * @param Closure|null $callback [Method to execute additional logic]
+     * @param bool $addInformation [Defines whether an object displays
+     * additional information]
+     *
      * @return void
      */
-    final public function exceptionHandler(): void
+    final public function exceptionHandler(?Closure $callback = null, bool $addInformation = false): void
     {
-        set_exception_handler(function (Throwable $exception): void {
-            if ($exception->getCode() === 0) {
-                http_response_code(self::INTERNAL_SERVER_ERROR);
-            } else {
-                http_response_code($exception->getCode());
+        set_exception_handler(function (Throwable $exception) use ($callback, $addInformation): void {
+            $code = $exception->getCode() === 0 ? self::INTERNAL_SERVER_ERROR : $exception->getCode();
+
+            if (null != $callback) {
+                $callback($code, $exception);
             }
+
+            http_response_code($code);
 
             if ($exception instanceof JsonSerializable) {
                 die(json_encode($exception));
             }
 
+            if ($addInformation) {
+                die(json_encode([
+                    'code' => $code,
+                    'status' => self::ERROR,
+                    'message' => $exception->getMessage(),
+                    'data' => [
+                        'file' => $exception->getFile(),
+                        'line' => $exception->getLine(),
+                    ],
+                ]));
+            }
+
             die(json_encode([
-                'code' => $exception->getCode() === 0 ? self::INTERNAL_SERVER_ERROR : $exception->getCode(),
+                'code' => $code,
                 'status' => self::ERROR,
                 'message' => $exception->getMessage(),
-                'data' => [
-                    'file' => $exception->getFile(),
-                    'line' => $exception->getLine(),
-                ],
             ]));
         });
     }
