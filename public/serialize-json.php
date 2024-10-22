@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 header('Content-Type: application/json');
 
-require_once('./vendor/autoload.php');
+require_once('../vendor/autoload.php');
 
 use Lion\Exceptions\Exception;
 use Lion\Exceptions\Interfaces\ExceptionInterface;
