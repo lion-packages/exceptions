@@ -9,9 +9,9 @@ use Tests\Providers\ExceptionProvider;
 
 class ExceptionTraitTest extends Test
 {
-    const STATUS = 'error';
-    const MESSAGE = 'ERR';
-    const CODE = 500;
+    private const string STATUS = 'error';
+    private const string MESSAGE = 'ERR';
+    private const int CODE = 500;
 
     public function testConstruct(): void
     {

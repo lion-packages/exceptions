@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Test;
+namespace Tests;
 
 use Lion\Exceptions\Exception;
 use Lion\Test\Test;
 
 class ExceptionTest extends Test
 {
-    const ERROR = 'error';
-    const SUCCESS = 'success';
+    private const string ERROR = 'error';
+    private const string SUCCESS = 'success';
 
     private Exception $exception;
 
