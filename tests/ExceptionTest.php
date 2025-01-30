@@ -6,6 +6,7 @@ namespace Tests;
 
 use Lion\Exceptions\Exception;
 use Lion\Test\Test;
+use PHPUnit\Framework\Attributes\Test as Testing;
 
 class ExceptionTest extends Test
 {
@@ -19,26 +20,30 @@ class ExceptionTest extends Test
         $this->exception = new Exception();
     }
 
-    public function testGetStatus()
+    #[Testing]
+    public function getStatus(): void
     {
         $status = $this->exception->getStatus();
 
         $this->assertSame(self::ERROR, $status);
     }
 
-    public function testSetStatus()
+    #[Testing]
+    public function setStatus(): void
     {
         $this->exception->setStatus(self::SUCCESS);
 
         $this->assertSame(self::SUCCESS, $this->exception->getStatus());
     }
 
-    public function testGetData()
+    #[Testing]
+    public function getData(): void
     {
         $this->assertNull($this->exception->getData());
     }
 
-    public function testSetData()
+    #[Testing]
+    public function setDataTest(): void
     {
         $newData = ['key' => 'value'];
 

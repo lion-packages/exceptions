@@ -14,7 +14,7 @@ use Lion\Exceptions\Traits\ExceptionTrait;
 (new Serialize())
     ->exceptionHandler();
 
-$customException = new class extends Exception implements ExceptionInterface
+$customException = new class('ERR', 'error', 500) extends Exception implements ExceptionInterface
 {
     use ExceptionTrait;
 };

@@ -34,14 +34,14 @@ jobs:
           php-version: '8.4'
           extensions: mbstring, gd, zip
 
+      - name: Composer Install
+        run: composer install
+        
       - name: Composer Validate
         run: composer validate --strict
 
       - name: Composer Check for vulnerabilities
         run: composer audit --locked
-
-      - name: Composer Install
-        run: composer install
 
       - name: Composer Dump-Autoload
         run: composer dump-autoload --optimize --strict-psr
