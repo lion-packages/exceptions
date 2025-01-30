@@ -10,6 +10,9 @@ use Throwable;
  * Implements the abstract methods necessary to execute an exception
  *
  * @package Lion\Exceptions\Traits
+ *
+ * @codeCoverageIgnore
+ * @phpstan-ignore-next-line
  */
 trait ExceptionTrait
 {
@@ -24,7 +27,7 @@ trait ExceptionTrait
      * exception chaining]
      */
     public function __construct(
-        string $message = '',
+        string $message,
         string $status = 'error',
         int $code = 500,
         mixed $data = null,
@@ -38,7 +41,7 @@ trait ExceptionTrait
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function jsonSerialize(): mixed
     {

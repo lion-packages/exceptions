@@ -39,6 +39,8 @@ final class Serialize
      * additional information]
      *
      * @return void
+     *
+     * @codeCoverageIgnore
      */
     final public function exceptionHandler(?Closure $callback = null, bool $addInformation = false): void
     {

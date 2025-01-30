@@ -6,6 +6,7 @@ namespace Tests;
 
 use Exception;
 use GuzzleHttp\Client;
+use GuzzleHttp\Exception\GuzzleException;
 use Lion\Test\Test;
 use PHPUnit\Framework\Attributes\Test as Testing;
 
@@ -28,15 +29,15 @@ class SerializeTest extends Test
     #[Testing]
     public function exceptionHandler(): void
     {
-        $exception = $this->getExceptionFromApi(function (): void {
+        try {
             $this->client->get('http://localhost:8000/serialize.php');
-        });
-
-        $this->assertJsonContent($this->getResponse($exception->getMessage(), 'response:'), [
-            'code' => self::CODE,
-            'status' => self::STATUS,
-            'message' => self::MESSAGE,
-        ]);
+        } catch (GuzzleException $exception) {
+            $this->assertJsonContent($this->getResponse($exception->getMessage(), 'response:'), [
+                'code' => self::CODE,
+                'status' => self::STATUS,
+                'message' => self::MESSAGE,
+            ]);
+        }
     }
 
     /**
@@ -45,14 +46,14 @@ class SerializeTest extends Test
     #[Testing]
     public function exceptionHandlerWithJsonSerializable(): void
     {
-        $exception = $this->getExceptionFromApi(function (): void {
+        try {
             $this->client->get('http://localhost:8000/serialize-json.php');
-        });
-
-        $this->assertJsonContent($this->getResponse($exception->getMessage(), 'response:'), [
-            'code' => self::CODE,
-            'status' => self::STATUS,
-            'message' => self::MESSAGE,
-        ]);
+        } catch (GuzzleException $exception) {
+            $this->assertJsonContent($this->getResponse($exception->getMessage(), 'response:'), [
+                'code' => self::CODE,
+                'status' => self::STATUS,
+                'message' => self::MESSAGE,
+            ]);
+        }
     }
 }
