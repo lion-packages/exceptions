@@ -1,30 +1,42 @@
+# 🦁 Lion-Exceptions
+
 <p align="center">
-  <a href="https://lion-client.vercel.app/" target="_blank">
+  <a href="https://dev.lion-packages.com/docs/library/content" target="_blank">
     <img 
         src="https://github.com/lion-packages/framework/assets/56183278/60871c9f-1c93-4481-8c1e-d70282b33254"
         width="450" 
-        alt="Lion-Framework Logo"
+        alt="Lion-Packages Logo"
     >
   </a>
 </p>
 
 <p align="center">
-  <img src="https://poser.pugx.org/lion/exceptions/v" alt="Latest Stable Version">
-  <img src="https://poser.pugx.org/lion/exceptions/downloads" alt="Total Downloads">
-  <img src="https://poser.pugx.org/lion/exceptions/license" alt="License">
-  <img src="https://poser.pugx.org/lion/exceptions/require/php" alt="PHP Version Require">
+  <a href="https://packagist.org/packages/lion/exceptions">
+    <img src="https://poser.pugx.org/lion/exceptions/v" alt="Latest Stable Version">
+  </a>
+  <a href="https://packagist.org/packages/lion/exceptions">
+    <img src="https://poser.pugx.org/lion/exceptions/downloads" alt="Total Downloads">
+  </a>
+  <a href="https://github.com/lion-packages/exceptions/blob/main/LICENSE">
+    <img src="https://poser.pugx.org/lion/exceptions/license" alt="License">
+  </a>
+  <a href="https://www.php.net/">
+    <img src="https://poser.pugx.org/lion/exceptions/require/php" alt="PHP Version Require">
+  </a>
 </p>
 
-## About Lion-Framework
+🚀 **Lion-Exceptions** Handling exceptions and serializations.
 
-Lion-Exceptions is a library for creating custom, serialized exceptions for JSON responses.
+---
 
-## Install
+## 📦 Installation
+
+Install the exceptions using **Composer**:
 
 ```bash
 composer require lion/exceptions
 ```
 
-## License
+## 📝 License
 
 The <strong>exceptions</strong> is open-sourced software licensed under the [MIT License](https://github.com/lion-packages/exceptions/blob/main/LICENSE).
