@@ -47,7 +47,7 @@ final class Serialize
         set_exception_handler(function (Throwable $exception) use ($callback, $addInformation): void {
             $code = $exception->getCode() === 0 ? self::INTERNAL_SERVER_ERROR : $exception->getCode();
 
-            if (null != $callback){
+            if (null != $callback) {
                 $callback($code, $exception);
             }
 
