@@ -9,9 +9,6 @@ use Exception as GlobalException;
 /**
  * Support for exception handling
  *
- * @property string $status [Exception response status]
- * @property mixed $data [Response data]
- *
  * @package Lion\Exceptions
  */
 class Exception extends GlobalException
