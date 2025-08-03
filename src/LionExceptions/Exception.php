@@ -7,31 +7,29 @@ namespace Lion\Exceptions;
 use Exception as GlobalException;
 
 /**
- * Support for exception handling
+ * Support for exception handling.
  *
  * @property string $status [Exception response status]
- * @property mixed $data [Response data]
- *
- * @package Lion\Exceptions
+ * @property mixed  $data   [Response data]
  */
 class Exception extends GlobalException
 {
     /**
-     * [Exception response status]
+     * [Exception response status].
      *
-     * @var string $status
+     * @var string
      */
     private string $status = 'error';
 
     /**
-     * [Response data]
+     * [Response data].
      *
-     * @var mixed $data
+     * @var mixed
      */
     private mixed $data = null;
 
     /**
-     * Get response status
+     * Get response status.
      *
      * @return string
      */
@@ -41,7 +39,7 @@ class Exception extends GlobalException
     }
 
     /**
-     * Change the response state of the exception
+     * Change the response state of the exception.
      *
      * @param string $status [Exception response status]
      *
@@ -55,7 +53,7 @@ class Exception extends GlobalException
     }
 
     /**
-     * Get the response data
+     * Get the response data.
      *
      * @return mixed
      */
@@ -65,7 +63,7 @@ class Exception extends GlobalException
     }
 
     /**
-     * Change response data
+     * Change response data.
      *
      * @param mixed $data [Response data]
      *

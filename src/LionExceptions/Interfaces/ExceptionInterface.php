@@ -8,9 +8,7 @@ use JsonSerializable;
 
 /**
  * Implements the JsonSerializable interface for serializing exceptions in JSON
- * format
- *
- * @package Lion\Exceptions\interfaces
+ * format.
  */
 interface ExceptionInterface extends JsonSerializable
 {

@@ -9,34 +9,32 @@ use JsonSerializable;
 use Throwable;
 
 /**
- * Manage exceptions defined in the system
- *
- * @package Lion\Bundle\Helpers
+ * Manage exceptions defined in the system.
  */
 final class Serialize
 {
     /**
      * [The HTTP 500 Internal Server Error response status code indicates that
      * the server encountered an unexpected condition that prevented it from
-     * fulfilling the request]
+     * fulfilling the request].
      *
      * @public const INTERNAL_SERVER_ERROR
      */
     public const int INTERNAL_SERVER_ERROR = 500;
 
     /**
-     * [Represents an error response object]
+     * [Represents an error response object].
      *
      * @const ERROR
      */
     public const string ERROR = 'error';
 
     /**
-     * Manages exceptions and serializes them to JSON format
+     * Manages exceptions and serializes them to JSON format.
      *
-     * @param Closure|null $callback [Method to execute additional logic]
-     * @param bool $addInformation [Defines whether an object displays
-     * additional information]
+     * @param Closure|null $callback       [Method to execute additional logic]
+     * @param bool         $addInformation [Defines whether an object displays
+     *                                     additional information]
      *
      * @return void
      */
@@ -52,24 +50,24 @@ final class Serialize
             http_response_code($code);
 
             if ($exception instanceof JsonSerializable) {
-                die(json_encode($exception));
+                exit(json_encode($exception));
             }
 
             if ($addInformation) {
-                die(json_encode([
-                    'code' => $code,
-                    'status' => self::ERROR,
+                exit(json_encode([
+                    'code'    => $code,
+                    'status'  => self::ERROR,
                     'message' => $exception->getMessage(),
-                    'data' => [
+                    'data'    => [
                         'file' => $exception->getFile(),
                         'line' => $exception->getLine(),
                     ],
                 ]));
             }
 
-            die(json_encode([
-                'code' => $code,
-                'status' => self::ERROR,
+            exit(json_encode([
+                'code'    => $code,
+                'status'  => self::ERROR,
                 'message' => $exception->getMessage(),
             ]));
         });

@@ -33,8 +33,8 @@ class SerializeTest extends Test
         });
 
         $this->assertJsonContent($this->getResponse($exception->getMessage(), 'response:'), [
-            'code' => self::CODE,
-            'status' => self::STATUS,
+            'code'    => self::CODE,
+            'status'  => self::STATUS,
             'message' => self::MESSAGE,
         ]);
     }
@@ -50,8 +50,8 @@ class SerializeTest extends Test
         });
 
         $this->assertJsonContent($this->getResponse($exception->getMessage(), 'response:'), [
-            'code' => self::CODE,
-            'status' => self::STATUS,
+            'code'    => self::CODE,
+            'status'  => self::STATUS,
             'message' => self::MESSAGE,
         ]);
     }
