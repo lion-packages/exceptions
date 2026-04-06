@@ -1,0 +1,17 @@
+name: Dependabot Add project
+
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  add-to-project:
+    if: github.actor == 'dependabot[bot]'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Add PR to Project
+        uses: actions/add-to-project@v1
+        with:
+          project-url: https://github.com/orgs/lion-packages/projects/33
+          github-token: ${{ secrets.GITHUB_TOKEN }}
