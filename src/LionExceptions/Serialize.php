@@ -9,34 +9,28 @@ use JsonSerializable;
 use Throwable;
 
 /**
- * Manage exceptions defined in the system
- *
- * @package Lion\Bundle\Helpers
+ * Manage exceptions defined in the system.
  */
 final class Serialize
 {
     /**
-     * [The HTTP 500 Internal Server Error response status code indicates that
-     * the server encountered an unexpected condition that prevented it from
-     * fulfilling the request]
-     *
-     * @public const INTERNAL_SERVER_ERROR
+     * The HTTP 500 Internal Server Error response status code indicates that the
+     * server encountered an unexpected condition that prevented it from fulfilling
+     * the request.
      */
     public const int INTERNAL_SERVER_ERROR = 500;
 
     /**
-     * [Represents an error response object]
-     *
-     * @const ERROR
+     * Represents an error response object.
      */
     public const string ERROR = 'error';
 
     /**
-     * Manages exceptions and serializes them to JSON format
+     * Manages exceptions and serializes them to JSON format.
      *
-     * @param Closure|null $callback [Method to execute additional logic]
-     * @param bool $addInformation [Defines whether an object displays
-     * additional information]
+     * @param Closure|null $callback Method to execute additional logic.
+     * @param bool $addInformation Defines whether an object displays additional
+     * information.
      *
      * @return void
      *

@@ -7,28 +7,26 @@ namespace Lion\Exceptions;
 use Exception as GlobalException;
 
 /**
- * Support for exception handling
- *
- * @package Lion\Exceptions
+ * Support for exception handling.
  */
 class Exception extends GlobalException
 {
     /**
-     * [Exception response status]
+     * Exception response status.
      *
      * @var string $status
      */
     private string $status = 'error';
 
     /**
-     * [Response data]
+     * Additional response data.
      *
-     * @var mixed $data
+     * @var array<mixed>|bool|float|int|null|object|string $data
      */
-    private mixed $data = null;
+    private array|bool|float|int|null|object|string $data = null;
 
     /**
-     * Get response status
+     * Get response status.
      *
      * @return string
      */
@@ -38,9 +36,9 @@ class Exception extends GlobalException
     }
 
     /**
-     * Change the response state of the exception
+     * Change the response state of the exception.
      *
-     * @param string $status [Exception response status]
+     * @param string $status Exception response status.
      *
      * @return Exception
      */
@@ -52,23 +50,23 @@ class Exception extends GlobalException
     }
 
     /**
-     * Get the response data
+     * Get the Additional response data.
      *
-     * @return mixed
+     * @return array<mixed>|bool|float|int|null|object|string
      */
-    final public function getData(): mixed
+    final public function getData(): array|bool|float|int|null|object|string
     {
         return $this->data;
     }
 
     /**
-     * Change response data
+     * Change additional response data.
      *
-     * @param mixed $data [Response data]
+     * @param array<mixed>|bool|float|int|null|object|string $data Additional response data.
      *
      * @return Exception
      */
-    final public function setData(mixed $data): Exception
+    final public function setData(array|bool|float|int|null|object|string $data): Exception
     {
         $this->data = $data;
 
