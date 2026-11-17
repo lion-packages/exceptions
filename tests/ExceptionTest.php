@@ -21,25 +21,25 @@ class ExceptionTest extends Test
     }
 
     #[Testing]
-    public function getStatus(): void
+    public function getResponseStatus(): void
     {
-        $status = $this->exception->getStatus();
+        $status = $this->exception->getResponseStatus();
 
         $this->assertSame(self::ERROR, $status);
     }
 
     #[Testing]
-    public function setStatus(): void
+    public function setResponseStatus(): void
     {
-        $this->exception->setStatus(self::SUCCESS);
+        $this->exception->setResponseStatus(self::SUCCESS);
 
-        $this->assertSame(self::SUCCESS, $this->exception->getStatus());
+        $this->assertSame(self::SUCCESS, $this->exception->getResponseStatus());
     }
 
     #[Testing]
     public function getData(): void
     {
-        $this->assertNull($this->exception->getData());
+        $this->assertNull($this->exception->getResponseData());
     }
 
     #[Testing]
@@ -47,8 +47,8 @@ class ExceptionTest extends Test
     {
         $newData = ['key' => 'value'];
 
-        $this->exception->setData($newData);
+        $this->exception->setResponseData($newData);
 
-        $this->assertSame($newData, $this->exception->getData());
+        $this->assertSame($newData, $this->exception->getResponseData());
     }
 }

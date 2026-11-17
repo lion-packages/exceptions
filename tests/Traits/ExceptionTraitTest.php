@@ -21,7 +21,7 @@ class ExceptionTraitTest extends Test
 
         $this->assertSame(self::MESSAGE, $exception->getMessage());
         $this->assertSame(self::CODE, $exception->getCode());
-        $this->assertSame(self::STATUS, $exception->getStatus());
+        $this->assertSame(self::STATUS, $exception->getResponseStatus());
     }
 
     #[Testing]
