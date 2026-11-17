@@ -30,7 +30,7 @@ class Exception extends GlobalException
      *
      * @return string
      */
-    final public function getStatus(): string
+    final public function getResponseStatus(): string
     {
         return $this->status;
     }
@@ -42,7 +42,7 @@ class Exception extends GlobalException
      *
      * @return Exception
      */
-    final public function setStatus(string $status): Exception
+    final public function setResponseStatus(string $status): Exception
     {
         $this->status = $status;
 
@@ -54,7 +54,7 @@ class Exception extends GlobalException
      *
      * @return array<mixed>|bool|float|int|null|object|string
      */
-    final public function getData(): array|bool|float|int|null|object|string
+    final public function getResponseData(): array|bool|float|int|null|object|string
     {
         return $this->data;
     }
@@ -66,7 +66,7 @@ class Exception extends GlobalException
      *
      * @return Exception
      */
-    final public function setData(array|bool|float|int|null|object|string $data): Exception
+    final public function setResponseData(array|bool|float|int|null|object|string $data): Exception
     {
         $this->data = $data;
 

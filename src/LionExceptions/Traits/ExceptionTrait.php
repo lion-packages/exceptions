@@ -34,8 +34,8 @@ trait ExceptionTrait
         ?Throwable $previus = null
     ) {
         $this
-            ->setStatus($status)
-            ->setData($data);
+            ->setResponseStatus($status)
+            ->setResponseData($data);
 
         parent::__construct($message, $code, $previus);
     }
@@ -45,19 +45,19 @@ trait ExceptionTrait
      */
     public function jsonSerialize(): mixed
     {
-        if (null === $this->getData()) {
+        if (null === $this->getResponseData()) {
             return (object) [
                 'code' => $this->getCode(),
-                'status' => $this->getStatus(),
+                'status' => $this->getResponseStatus(),
                 'message' => $this->getMessage(),
             ];
         }
 
         return (object) [
             'code' => $this->getCode(),
-            'status' => $this->getStatus(),
+            'status' => $this->getResponseStatus(),
             'message' => $this->getMessage(),
-            'data' => $this->getData(),
+            'data' => $this->getResponseData(),
         ];
     }
 }
